@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dataquality.analysis="http://dataquality.analysis" xmlns:dataquality.domain="http://dataquality.domain" xmlns:dataquality.indicators="http://dataquality.indicators" xmlns:relational="http://www.talend.org/cwm/resource/relational/2010">
+  <dataquality.analysis:Analysis xmi:id="_WiONkNMYEe-YaM0DFnTzOQ" name="ErrorIDAnalysis" creationDate="2025-01-15T15:11:41.659+0700" defaultContext="Default">
+    <clientDependency href="../../metadata/connections/PredictiveMaintenanceDB_0.1.item#_pIS3zB5VEfCvMZTslxL13w"/>
+    <taggedValue xmi:id="_WiONkdMYEe-YaM0DFnTzOQ" tag="Status" value="development"/>
+    <taggedValue xmi:id="_WiONktMYEe-YaM0DFnTzOQ" tag="Author" value="daniel.d@siftanalyticsgrouppteltd_nfr"/>
+    <taggedValue xmi:id="_WiONk9MYEe-YaM0DFnTzOQ" tag="Purpose" value="test"/>
+    <taggedValue xmi:id="_WiONlNMYEe-YaM0DFnTzOQ" tag="Description" value="test"/>
+    <taggedValue xmi:id="_WiONldMYEe-YaM0DFnTzOQ" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_oILXodMYEe-YaM0DFnTzOQ" tag="ANA_LAST_RUN_CONTEXT" value="Default"/>
+    <taggedValue xmi:id="_oILXotMYEe-YaM0DFnTzOQ" tag="PREVIEW_ROW_NUMBER" value="50"/>
+    <taggedValue xmi:id="_oILXo9MYEe-YaM0DFnTzOQ" tag="NUMBER_OF_CONNECTIONS_PER_ANALYSIS" value="5"/>
+    <taggedValue xmi:id="_oINM0NMYEe-YaM0DFnTzOQ" tag="Is Use Sample Data" value="false"/>
+    <context xmi:id="_WiONltMYEe-YaM0DFnTzOQ">
+      <connection href="../../metadata/connections/PredictiveMaintenanceDB_0.1.item#_JTw_IBwdEfC_NOLURaV59A"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/PredictiveMaintenanceDB_0.1.item#_Z5Q_hhwiEfC_NOLURaV59A"/>
+      <analysedElements xsi:type="relational:TdColumn" href="../../metadata/connections/PredictiveMaintenanceDB_0.1.item#_Z5Q_ihwiEfC_NOLURaV59A"/>
+    </context>
+    <results xmi:id="_WiONl9MYEe-YaM0DFnTzOQ">
+      <resultMetadata xmi:id="_WiONmNMYEe-YaM0DFnTzOQ" executionDate="2025-06-13T00:33:15.234+0700" executionDuration="51" message="" executionNumber="5" lastRunOk="true" lastExecutionNumberOk="4"/>
+      <indicators xsi:type="dataquality.indicators:ModeIndicator" xmi:id="_UMnc0EezEfC4GuII6O-gRQ" computed="true" mode="ACED0005737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B020000787000000063">
+        <parameters xmi:id="_UMnc0UezEfC4GuII6O-gRQ"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/PredictiveMaintenanceDB_0.1.item#_Z5Q_hhwiEfC_NOLURaV59A"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Advanced Statistics/Mode_0.1.definition#_ccIR4RF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_UjXI4EezEfC4GuII6O-gRQ" body="SELECT `machineID`, COUNT(*) c FROM `predictivemaintenancedev`.`failures` t  GROUP BY `machineID` ORDER BY c DESC LIMIT 1" language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_UZe0IEezEfC4GuII6O-gRQ" name="Mode" label="Mode">
+          <taggedValue xmi:id="_UZe0IUezEfC4GuII6O-gRQ" tag="Description" value="computes the mode (most probable value). For numerical data or continuous data, bins can be set in the parameters of this indicator. It is different from the average and from the median. Generalization of it is an histogram. It is good for addressing categorical attributes"/>
+          <taggedValue xmi:id="_UZe0IkezEfC4GuII6O-gRQ" tag="Purpose" value="evaluates the most frequent value"/>
+          <sqlGenericExpression xmi:id="_UZe0I0ezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY COUNT(*) DESC " language="SQL"/>
+          <sqlGenericExpression xmi:id="_UZe0JEezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY COUNT(*) DESC " language="Oracle"/>
+          <sqlGenericExpression xmi:id="_UZe0JUezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY COUNT(*) DESC " language="DB2"/>
+          <sqlGenericExpression xmi:id="_UZe0JkezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_UZe0J0ezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="AS/400"/>
+          <sqlGenericExpression xmi:id="_UZe0KEezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC " language="Hive" version=""/>
+          <sqlGenericExpression xmi:id="_UZe0KUezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="Informix"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:FrequencyIndicator" xmi:id="_UMnc0kezEfC4GuII6O-gRQ" computed="true" distinctValueCount="10" valueToFreq="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C7708000000100000000A737200116A6176612E6C616E672E496E746567657212E2A0A4F781873802000149000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B0200007870000000107372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C75657871007E0003000000000000000D7371007E0002000000117371007E0005000000000000000F7371007E0002000000627371007E000500000000000000107371007E0002000000637371007E000500000000000000137371007E0002000000537371007E0005000000000000000E7371007E00020000001471007E00067371007E00020000002571007E000E7371007E00020000001671007E00087371007E00020000004771007E00067371007E00020000000D71007E000678">
+        <parameters xmi:id="_UMnc00ezEfC4GuII6O-gRQ"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/PredictiveMaintenanceDB_0.1.item#_Z5Q_hhwiEfC_NOLURaV59A"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Advanced Statistics/Frequency_Table_0.1.definition#_ccIR4hF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_UjXI4UezEfC4GuII6O-gRQ" body="SELECT `machineID`, COUNT(*) c FROM `predictivemaintenancedev`.`failures` t  GROUP BY `machineID` ORDER BY c DESC LIMIT 10" language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_UiQVoEezEfC4GuII6O-gRQ" name="Frequency Table" label="Frequency Table">
+          <taggedValue xmi:id="_UiQVoUezEfC4GuII6O-gRQ" tag="Description" value="counts the number of records for each distinct record"/>
+          <taggedValue xmi:id="_UiQVokezEfC4GuII6O-gRQ" tag="Purpose" value="evaluates the most frequent records"/>
+          <sqlGenericExpression xmi:id="_UiQVo0ezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="SQL"/>
+          <sqlGenericExpression xmi:id="_UiQVpEezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_UiQVpUezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Oracle"/>
+          <sqlGenericExpression xmi:id="_UiQVpkezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY COUNT(*) DESC" language="PostgreSQL"/>
+          <sqlGenericExpression xmi:id="_UiQVp0ezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="DB2"/>
+          <sqlGenericExpression xmi:id="_UiQVqEezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Teradata"/>
+          <sqlGenericExpression xmi:id="_UiQVqUezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="Informix"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:ModeIndicator" xmi:id="_UMnc1UezEfC4GuII6O-gRQ" computed="true" mode="ACED0005740005636F6D7032">
+        <parameters xmi:id="_UMnc1kezEfC4GuII6O-gRQ"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/PredictiveMaintenanceDB_0.1.item#_Z5Q_ihwiEfC_NOLURaV59A"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Advanced Statistics/Mode_0.1.definition#_ccIR4RF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_UjXI4kezEfC4GuII6O-gRQ" body="SELECT `failure`, COUNT(*) c FROM `predictivemaintenancedev`.`failures` t  GROUP BY `failure` ORDER BY c DESC LIMIT 1" language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_UjE1AEezEfC4GuII6O-gRQ" name="Mode" label="Mode">
+          <taggedValue xmi:id="_UjE1AUezEfC4GuII6O-gRQ" tag="Description" value="computes the mode (most probable value). For numerical data or continuous data, bins can be set in the parameters of this indicator. It is different from the average and from the median. Generalization of it is an histogram. It is good for addressing categorical attributes"/>
+          <taggedValue xmi:id="_UjE1AkezEfC4GuII6O-gRQ" tag="Purpose" value="evaluates the most frequent value"/>
+          <sqlGenericExpression xmi:id="_UjE1A0ezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY COUNT(*) DESC " language="SQL"/>
+          <sqlGenericExpression xmi:id="_UjE1BEezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY COUNT(*) DESC " language="Oracle"/>
+          <sqlGenericExpression xmi:id="_UjE1BUezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY COUNT(*) DESC " language="DB2"/>
+          <sqlGenericExpression xmi:id="_UjE1BkezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_UjE1B0ezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="AS/400"/>
+          <sqlGenericExpression xmi:id="_UjE1CEezEfC4GuII6O-gRQ" body="SELECT  &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> m &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC " language="Hive" version=""/>
+          <sqlGenericExpression xmi:id="_UjE1CUezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="Informix"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+      <indicators xsi:type="dataquality.indicators:FrequencyIndicator" xmi:id="_UMnc10ezEfC4GuII6O-gRQ" computed="true" distinctValueCount="4" valueToFreq="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000C77080000001000000004740005636F6D70347372000E6A6176612E6C616E672E4C6F6E673B8BE490CC8F23DF0200014A000576616C7565787200106A6176612E6C616E672E4E756D62657286AC951D0B94E08B020000787000000000000000B3740005636F6D70337371007E00030000000000000083740005636F6D70327371007E00030000000000000103740005636F6D70317371007E000300000000000000C078">
+        <parameters xmi:id="_UMnc2EezEfC4GuII6O-gRQ"/>
+        <analyzedElement xsi:type="relational:TdColumn" href="../../metadata/connections/PredictiveMaintenanceDB_0.1.item#_Z5Q_ihwiEfC_NOLURaV59A"/>
+        <indicatorDefinition href="../../TDQ_Libraries/Indicators/System Indicators/Advanced Statistics/Frequency_Table_0.1.definition#_ccIR4hF2Ed2PKb6nEJEvhw"/>
+        <instantiatedExpressions xsi:type="relational:TdExpression" xmi:id="_UjXv8EezEfC4GuII6O-gRQ" body="SELECT `failure`, COUNT(*) c FROM `predictivemaintenancedev`.`failures` t  GROUP BY `failure` ORDER BY c DESC LIMIT 10" language="MySQL"/>
+        <builtInIndicatorDefinition xmi:id="_UjOmAEezEfC4GuII6O-gRQ" name="Frequency Table" label="Frequency Table">
+          <taggedValue xmi:id="_UjOmAUezEfC4GuII6O-gRQ" tag="Description" value="counts the number of records for each distinct record"/>
+          <taggedValue xmi:id="_UjOmAkezEfC4GuII6O-gRQ" tag="Purpose" value="evaluates the most frequent records"/>
+          <sqlGenericExpression xmi:id="_UjOmA0ezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="SQL"/>
+          <sqlGenericExpression xmi:id="_UjOmBEezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="MySQL"/>
+          <sqlGenericExpression xmi:id="_UjOmBUezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Oracle"/>
+          <sqlGenericExpression xmi:id="_UjOmBkezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY COUNT(*) DESC" language="PostgreSQL"/>
+          <sqlGenericExpression xmi:id="_UjOmB0ezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="DB2"/>
+          <sqlGenericExpression xmi:id="_UjOmCEezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__COLUMN_NAMES__%> ORDER BY c DESC" language="Teradata"/>
+          <sqlGenericExpression xmi:id="_UjOmCUezEfC4GuII6O-gRQ" body="SELECT &lt;%=__COLUMN_NAMES__%>, COUNT(*) c FROM &lt;%=__TABLE_NAME__%> t &lt;%=__WHERE_CLAUSE__%> GROUP BY &lt;%=__GROUP_BY_ALIAS__%> ORDER BY c DESC" language="Informix"/>
+        </builtInIndicatorDefinition>
+      </indicators>
+    </results>
+    <parameters xmi:id="_WiONmdMYEe-YaM0DFnTzOQ" dataFilter="_oISsYNMYEe-YaM0DFnTzOQ" analysisType="Multiple Column Analysis"/>
+    <contextType xmi:id="_oILXoNMYEe-YaM0DFnTzOQ" confirmationNeeded="false" hide="false" name="Default"/>
+  </dataquality.analysis:Analysis>
+  <dataquality.domain:Domain xmi:id="_oISsYNMYEe-YaM0DFnTzOQ" name="ErrorIDAnalysis">
+    <ranges xmi:id="_oISsYdMYEe-YaM0DFnTzOQ">
+      <expressions xmi:id="_oISsYtMYEe-YaM0DFnTzOQ">
+        <expression xsi:type="relational:TdExpression" xmi:id="_oISsY9MYEe-YaM0DFnTzOQ" body="" language="SQL"/>
+      </expressions>
+    </ranges>
+  </dataquality.domain:Domain>
+</xmi:XMI>
