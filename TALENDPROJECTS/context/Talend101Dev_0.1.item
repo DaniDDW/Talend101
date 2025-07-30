@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd">
+  <talendfile:ContextType xmi:id="__PRTUGE7Ee-y9rLusI6B8Q" confirmationNeeded="false" hide="false" name="Production">
+    <contextParameter xmi:id="__PRTUWE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Port" prompt="Talend101_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="3306"/>
+    <contextParameter xmi:id="__PRTUmE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Database" prompt="Talend101_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="talend101"/>
+    <contextParameter xmi:id="__PRTU2E7Ee-y9rLusI6B8Q" comment="" name="Talend101_AdditionalParams" prompt="Talend101_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter xmi:id="__PRTVGE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Login" prompt="Talend101_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="root"/>
+    <contextParameter xmi:id="__PRTVWE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Password" prompt="Talend101_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:sTGiNIDUyQhMprO93kOkuDResXaOXU0PJ53MqT6tuPBZsQ=="/>
+    <contextParameter xmi:id="__PRTVmE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Server" prompt="Talend101_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="localhost"/>
+  </talendfile:ContextType>
+  <talendfile:ContextType xmi:id="__PRTV2E7Ee-y9rLusI6B8Q" confirmationNeeded="false" hide="false" name="Development">
+    <contextParameter xmi:id="__PRTWGE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Port" prompt="Talend101_Port?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="3306"/>
+    <contextParameter xmi:id="__PRTWWE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Database" prompt="Talend101_Database?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="talend101dev"/>
+    <contextParameter xmi:id="__PRTWmE7Ee-y9rLusI6B8Q" comment="" name="Talend101_AdditionalParams" prompt="Talend101_AdditionalParams?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="noDatetimeStringSync=true&amp;enabledTLSProtocols=TLSv1.2,TLSv1.1,TLSv1"/>
+    <contextParameter xmi:id="__PRTW2E7Ee-y9rLusI6B8Q" comment="" name="Talend101_Login" prompt="Talend101_Login?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="root"/>
+    <contextParameter xmi:id="__PRTXGE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Password" prompt="Talend101_Password?" promptNeeded="false" repositoryContextId="built-in" type="id_Password" value="enc:system.encryption.key.v1:sZID/dQe4UhuGMF1kCcnp9UsH8uIkUgDvom45x5hvs3ozA=="/>
+    <contextParameter xmi:id="__PRTXWE7Ee-y9rLusI6B8Q" comment="" name="Talend101_Server" prompt="Talend101_Server?" promptNeeded="false" repositoryContextId="built-in" type="id_String" value="localhost"/>
+  </talendfile:ContextType>
+</xmi:XMI>
